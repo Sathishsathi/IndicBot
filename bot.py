@@ -2,9 +2,10 @@
 from botscripts.login import login
 from scripts.template_subs import run_template_subs
 import sys
+import requests
 
 # Login with wiki and get the login session
-SESSION = login()
+SESSION: requests.Session | None = login()
 
 # Check the session
 if SESSION is None:
